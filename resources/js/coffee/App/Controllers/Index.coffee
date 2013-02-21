@@ -1,0 +1,3 @@
+require [
+  'App/Views/TestButton'
+], ->

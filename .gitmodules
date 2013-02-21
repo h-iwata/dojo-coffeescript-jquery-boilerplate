@@ -1,0 +1,12 @@
+[submodule "resources/js/src/dojo"]
+	path = resources/js/src/dojo
+	url = git://github.com/dojo/dojo.git
+[submodule "resources/js/src/dijit"]
+	path = resources/js/src/dijit
+	url = git://github.com/dojo/dijit
+[submodule "resources/js/src/util"]
+	path = resources/js/src/util
+	url = git://github.com/dojo/util
+[submodule "resources/js/src/dojox"]
+	path = resources/js/src/dojox
+	url = git://github.com/dojo/dojox
