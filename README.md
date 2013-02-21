@@ -18,6 +18,10 @@ Quick Start
 2. Open `index.html` in your favorite browser (I recommend opera) and see how it works. 
 3. Develop your project in `coffee/` until it is amazing.
 4. Run `resources/js/tools/build/startBuild.sh`, which will create an awesome optimised build in `release/`.
+5. switch the config.js directory as follows 
+	`<script type="text/javascript" src="/resources/js/src/config.js"></script>`
+	to
+	`<script type="text/javascript" src="/resources/js/release/config.js"></script>`
 5. Upload `release/` for millions of people the world over to enjoy.
 6. Hapyness.
 
