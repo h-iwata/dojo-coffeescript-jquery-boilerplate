@@ -1,29 +1,63 @@
-dojo-coffeescript-jquery-boilerplate
+#dojo-coffeescript-jquery-boilerplate
 ====================================================
 
-About the boilerplate
-
+##About the boilerplate
 ---------------------
 The dojo-coffeescript-jquery-boilerplate is aimed at the best practice for the develop enviroment 
-which use dojo for baseframework, jquery for dom operation, coffeescript for languages.
+with dojo for baseframework, jquery for dom operation, and coffeescript as languages.
 
-dojo-coffeescript-jquery-boilerplate　は、ベースフレームワークにdojoを使い、Domの操作にjqueryを使い、
-言語はcoffeescriptを使うといった選択をした時のベストプラクティスを目指しています。
+##Quick Start
+---------------------
 
-Quick Start
------------
+1. Clone the repository using `git clone --recursive`.
+2. Run `resouces/js/tools/startCoffeeWatch.sh`, which compiles test codes to `resources/js/src/` from `resources/js/coffee/`.
+3. Open `index.html` in your favorite browser (I recommend opera) and see how it works. 
+4. Develop your project in `coffee/` until it is amazing.
+5. Run `resources/js/tools/build/startBuild.sh`, which will create an awesome optimised build in `release/`.
+6. switch the config.js directory from `<script type="text/javascript" src="/resources/js/src/config.js"></script>` to `<script type="text/javascript" src="/resources/js/release/config.js"></script>`
+7. Upload `release/` for millions of people the world over to enjoy.
+8. Hapyness.
 
-0. Clone the repository using `git clone --recursive`.
-1. Run `resouces/js/tools/startCoffeeWatch.sh`, which compiles my test codes to `resources/js/src/` from `resources/js/coffee/`.
-2. Open `index.html` in your favorite browser (I recommend opera) and see how it works. 
-3. Develop your project in `coffee/` until it is amazing.
-4. Run `resources/js/tools/build/startBuild.sh`, which will create an awesome optimised build in `release/`.
-5. switch the config.js directory as follows 
-	`<script type="text/javascript" src="/resources/js/src/config.js"></script>`
-	to
-	`<script type="text/javascript" src="/resources/js/release/config.js"></script>`
-5. Upload `release/` for millions of people the world over to enjoy.
-6. Hapyness.
+##Features
+* The dojo toolkit via CDN (dojo in local files is only for build).
+* The latest jQuery via CDN.
+* Custormized build script from [dojo-dojo-boilerplate](https://github.com/csnover/dojo-boilerplate), which build app in a release folder, delete .uncompressed files, place config.js and remove dojo local files in the directory.
+
+## How you create new pages from this?
+Create new Controller in the Controllers directory.
+Require all modules that are used in the page. 
+Add the Controller Name in resources/js/tools/build/profile.js 
+```
+layers: {
+	'App/Controllers/Index' :{},
+	'App/Controllers/#{createdControllerName}' :{},` //like this
+},
+```
+
+## How you rename "App" to your app name? Where is?
+The following file name
+* src/App/App.profile.js
+The following line
+* `"dojoBuild": "App.profile.js"` src/App/package.json 
+* `var AppName = "App"` src/config.js
+* `var AppName = "App"` tools/build/config.js
+* `var AppName = 'App'` tools/build/release.config.js
+* `'App/Controllers/Index' :{},` tools/build/profile.js
+The following directory name
+* coffee/App 
+* src/App
+That's all! (I know the places are too many)
+
+## Contributing
+Anyone is welcome. 
+
+
+
+
+
+
+
+
 
 
 

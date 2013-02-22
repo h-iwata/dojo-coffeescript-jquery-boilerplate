@@ -35,7 +35,7 @@ fi
 cd "$TOOLSDIR"
 
 echo $SRCDIR
-# nodeを使用
+# use node.js
 if which node >/dev/null ; then
     node $SRCDIR/dojo/dojo.js load=build --dojoConfig "$LOADERCONF" --profile "$PROFILE" --releaseDir "$DISTDIR" $@
     echo "done!"
@@ -56,6 +56,7 @@ echo "place config.js "
 
 cp release.config.js ../../release/config.js
 
+echo "remove dojo local files in the release folder"
 if [ -d "$DISTDIR/dojo" ]; then
 	rm -r ../../release/dojo/
 	rm -r ../../release/dijit/
