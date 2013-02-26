@@ -34,14 +34,14 @@ After build, you will see all modules used by the Widgets is included in the con
 ## How you rename "App" to your app name?
 
 Rename the following line.
-	`var AppName = "App"` src/config.js
-	`var AppName = "App"` tools/build/config.js
-	`var AppName = 'App'` tools/build/release.config.js
-	`'App/Controllers/Index' :{},` tools/build/profile.js
+* `var AppName = "App"` src/config.js
+* `var AppName = "App"` tools/build/config.js
+* `var AppName = 'App'` tools/build/release.config.js
+* `'App/Controllers/Index' :{},` tools/build/profile.js
 
 Rename The following directory name.
-	coffee/App 
-	src/App
+* coffee/App 
+* src/App
 
 That's all! (I know the places are too many).
 
