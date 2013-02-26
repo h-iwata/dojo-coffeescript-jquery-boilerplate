@@ -1,8 +1,6 @@
 #dojo-coffeescript-jquery-boilerplate
-====================================================
 
 ##About the boilerplate
----------------------
 The dojo-coffeescript-jquery-boilerplate is aimed at the best practice for the develop enviroment 
 with dojo for baseframework, jquery for dom operation, and coffeescript as languages.
 
@@ -34,19 +32,19 @@ layers: {
 },
 ```
 
-## How you rename "App" to your app name? Where is?
-The following file name
-* src/App/App.profile.js
-The following line
-* `"dojoBuild": "App.profile.js"` src/App/package.json 
-* `var AppName = "App"` src/config.js
-* `var AppName = "App"` tools/build/config.js
-* `var AppName = 'App'` tools/build/release.config.js
-* `'App/Controllers/Index' :{},` tools/build/profile.js
-The following directory name
-* coffee/App 
-* src/App
-That's all! (I know the places are too many)
+## How you rename "App" to your app name?
+
+Rename the following line.
+	`var AppName = "App"` src/config.js
+	`var AppName = "App"` tools/build/config.js
+	`var AppName = 'App'` tools/build/release.config.js
+	`'App/Controllers/Index' :{},` tools/build/profile.js
+
+Rename The following directory name.
+	coffee/App 
+	src/App
+
+That's all! (I know the places are too many).
 
 ## Contributing
 Anyone is welcome. 
