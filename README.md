@@ -1,11 +1,9 @@
 #dojo-coffeescript-jquery-boilerplate
 
-##About the boilerplate
 The dojo-coffeescript-jquery-boilerplate is aimed at the best practice for the develop enviroment 
 with dojo for baseframework, jquery for dom operation, and coffeescript as languages.
 
 ##Quick Start
----------------------
 
 1. Clone the repository using `git clone --recursive`.
 2. Run `resouces/js/tools/startCoffeeWatch.sh`, which compiles test codes to `resources/js/src/` from `resources/js/coffee/`.
@@ -17,20 +15,21 @@ with dojo for baseframework, jquery for dom operation, and coffeescript as langu
 8. Hapyness.
 
 ##Features
-* The dojo toolkit via CDN (dojo in local files is only for build).
+* The dojo toolkit via CDN (dojo files in your local directory are only used for build).
 * The latest jQuery via CDN.
 * Custormized build script from [dojo-dojo-boilerplate](https://github.com/csnover/dojo-boilerplate), which build app in a release folder, delete .uncompressed files, place config.js and remove dojo local files in the directory.
 
 ## How you create new pages from this?
-Create new Controller in the Controllers directory.
-Require all modules that are used in the page. 
-Add the Controller Name in resources/js/tools/build/profile.js 
+To be optimized build, you should create a controller in a page as a main script,
+require all Widgets used in the page in the controller,
+then add the Controller in resources/js/tools/build/profile.js to build
 ```
 layers: {
 	'App/Controllers/Index' :{},
-	'App/Controllers/#{createdControllerName}' :{},` //like this
+	'App/Controllers/#{createdControllerName}' :{},`
 },
 ```
+After build, you will see all modules used by the Widgets is included in the controller file.
 
 ## How you rename "App" to your app name?
 
@@ -48,14 +47,3 @@ That's all! (I know the places are too many).
 
 ## Contributing
 Anyone is welcome. 
-
-
-
-
-
-
-
-
-
-
-
