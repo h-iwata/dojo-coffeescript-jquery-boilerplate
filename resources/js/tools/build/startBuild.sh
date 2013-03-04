@@ -14,6 +14,9 @@ DISTDIR="$BASEDIR/../../release"
 # Source directory for unbuilt code
 SRCDIR="$BASEDIR/../../src"
 
+# CoffeeScript directory for develop
+COFFEEDIR="$BASEDIR/../../coffee"
+
 # Main application package loader configuration
 LOADERCONF="$BASEDIR/config.js"
 
@@ -23,6 +26,14 @@ TOOLSDIR="$SRCDIR/util/buildscripts"
 if [ ! -d "$TOOLSDIR" ]; then
 	echo "Can't find Dojo build tools -- did you initialise submodules? (git submodule update --init --recursive)"
 	exit 1
+fi
+
+if [ -d "$DISTDIR" ]; then
+	echo "compile coffee to javascript..."
+	coffee -c --output $SRCDIR/$APP_NAME $COFFEEDIR/$APP_NAME
+	echo "done"!
+else
+	echo 'the /coffee directory doesn't exist...but I continue build process...'
 fi
 
 echo "Building application with $PROFILE to $DISTDIR."
