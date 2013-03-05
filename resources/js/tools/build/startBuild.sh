@@ -30,7 +30,7 @@ fi
 
 if [ -d "$DISTDIR" ]; then
 	echo "compile coffee to javascript..."
-	coffee -c --output $SRCDIR/$APP_NAME $COFFEEDIR/$APP_NAME
+	coffee -c --output $SRCDIR $COFFEEDIR
 	echo "done"!
 else
 	echo 'the /coffee directory doesn't exist...but I continue build process...'
