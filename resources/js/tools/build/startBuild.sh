@@ -28,13 +28,14 @@ if [ ! -d "$TOOLSDIR" ]; then
 	exit 1
 fi
 
-if [ -d "$DISTDIR" ]; then
-	echo "compile coffee to javascript..."
-	coffee -c --output $SRCDIR $COFFEEDIR
-	echo "done"!
-else
-	echo 'the /coffee directory doesn't exist...but I continue build process...'
+if [ ! -d "$DISTDIR" ]; then
+	mkdir $DISTDIR
 fi
+
+echo "compile coffee to javascript..."
+coffee -c --output $SRCDIR $COFFEEDIR
+echo "done!"
+
 
 echo "Building application with $PROFILE to $DISTDIR."
 
@@ -74,21 +75,3 @@ if [ -d "$DISTDIR/dojo" ]; then
 	rm -r ../../release/dojox/
 fi
 echo "complete !!"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
