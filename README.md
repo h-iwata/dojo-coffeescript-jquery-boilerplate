@@ -5,7 +5,7 @@ with dojo for baseframework, jquery for dom operation, and coffeescript as langu
 
 ##Quick Start
 
-1. Clone the repository using `git clone --recursive git://github.com/h-iwata/dojo-coffeescript-jquery-boilerplate.git` at your `js` or `javascript` directory.
+1. Clone the repository using `git clone --recursive git://github.com/h-iwata/dojo-coffeescript-jquery-boilerplate.git` on your `js` or `javascript` directory.
 2. `chmod u+x ./tools/startCoffeeWatch.sh` then run `./tools/startCoffeeWatch.sh`, which compiles test codes to `/src` from `/coffee`.
 3. Open `/test/index.html` in your favorite browser (I recommend opera) and see how it works. 
 4. Develop your project in `/coffee` until it is amazing.
@@ -32,7 +32,7 @@ layers: {
 After build, you will see all modules used by the Widgets is included in the controller file.
 
 ## How you change Base path?
-change dojoConfig.baseUrl in config.js
+change `dojoConfig.baseUrl` in config.js
 
 ## How you rename "App" to your app name?
 
