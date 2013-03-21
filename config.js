@@ -6,7 +6,7 @@ var dojoConfig = {
 	parseOnLoad 	: true,
 	gfxRenderer: "canvas, svg, silverlight,vml",
 	locale: 'ja-jp',
-	baseUrl: '/resources/js/release',
+	baseUrl: '/release',
 	packages: [
 		{ name: AppName, location: AppName },
 		{ name: "lib", location: '../lib'}
@@ -18,7 +18,7 @@ var dojoConfig = {
 }
 
 if (debug){
-	dojoConfig.baseUrl = '/resources/js/src';
+	dojoConfig.baseUrl = '/src';
 	dojoConfig.cacheBust = true;
 	dojoConfig.isDebug = true; 
 	dojoConfig.has = {
