@@ -6,12 +6,12 @@ with dojo for baseframework, jquery for dom operation, and coffeescript as langu
 ##Quick Start
 
 1. Clone the repository using `git clone --recursive`.
-2. Run `resouces/js/tools/startCoffeeWatch.sh`, which compiles test codes to `resources/js/src/` from `resources/js/coffee/`.
+2. Run `/resouces/js/tools/startCoffeeWatch.sh`, which compiles test codes to `resources/js/src/` from `resources/js/coffee`.
 3. Open `index.html` in your favorite browser (I recommend opera) and see how it works. 
-4. Develop your project in `coffee/` until it is amazing.
-5. Run `resources/js/tools/build/startBuild.sh`, which will create an awesome optimised build in `release/`.
-6. switch the config.js directory from `<script type="text/javascript" src="/resources/js/src/config.js"></script>` to `<script type="text/javascript" src="/resources/js/release/config.js"></script>`
-7. Upload `release/` for millions of people the world over to enjoy.
+4. Develop your project in `/resouces/js/coffee` until it is amazing.
+5. Run `/resources/js/tools/build/startBuild.sh`, which will create an awesome optimised build in `/resources/js/release`.
+6. Open `/resources/js/config.js` and change a line from `var debug = true;` to `var debug = false;`.
+7. Upload `/release` for millions of people the world over to enjoy.
 8. Hapyness.
 
 ##Features
@@ -34,16 +34,15 @@ After build, you will see all modules used by the Widgets is included in the con
 ## How you rename "App" to your app name?
 
 Rename the following line.
-* `var AppName = "App"` src/config.js
-* `var AppName = "App"` tools/build/config.js
-* `var AppName = 'App'` tools/build/release.config.js
+* `var AppName = "App"` /resouces/js/config.js
+* `var AppName = "App"` /resouces/js/tools/build/config.js
 * `'App/Controllers/Index' :{},` tools/build/profile.js
 
 Rename The following directory name.
 * coffee/App 
 * src/App
 
-That's all! (I know the places are too many).
+That's all.
 
 ## Contributing
-Anyone is welcome. 
+Anyone is welcome.

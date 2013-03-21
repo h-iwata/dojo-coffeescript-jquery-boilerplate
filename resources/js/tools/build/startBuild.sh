@@ -64,10 +64,6 @@ if [ -d "$DISTDIR" ] && [ -n "$(find $DISTDIR -type f -name '*.uncompressed.js')
 fi
 cd "$BASEDIR"
 
-echo "place config.js "
-
-cp release.config.js ../../release/config.js
-
 echo "remove dojo local files in the release folder"
 if [ -d "$DISTDIR/dojo" ]; then
 	rm -r ../../release/dojo/

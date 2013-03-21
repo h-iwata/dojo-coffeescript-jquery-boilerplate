@@ -2,7 +2,7 @@ var profile = {
 	
 	action: 'release',
 	
-	basePath: '../../',
+	basePath: '../../src',
 	
 	mini: true,
 
