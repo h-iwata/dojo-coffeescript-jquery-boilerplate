@@ -1,12 +1,12 @@
-[submodule "javascript/src/dojo"]
-	path = javascript/src/dojo
+[submodule "javascripts/src/dojo"]
+	path = javascripts/src/dojo
 	url = git://github.com/dojo/dojo.git
-[submodule "javascript/src/dijit"]
-	path = javascript/src/dijit
+[submodule "javascripts/src/dijit"]
+	path = javascripts/src/dijit
 	url = git://github.com/dojo/dijit
-[submodule "javascript/src/util"]
-	path = javascript/src/util
+[submodule "javascripts/src/util"]
+	path = javascripts/src/util
 	url = git://github.com/dojo/util
-[submodule "javascript/src/dojox"]
-	path = javascript/src/dojox
+[submodule "javascripts/src/dojox"]
+	path = javascripts/src/dojox
 	url = git://github.com/dojo/dojox
