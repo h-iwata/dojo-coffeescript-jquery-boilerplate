@@ -1,3 +1,3 @@
 require [
-  'App/Views/TestButton'
+  'App/Views/HelloDojoButton'
 ]

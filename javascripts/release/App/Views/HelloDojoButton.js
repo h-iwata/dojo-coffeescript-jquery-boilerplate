@@ -1,0 +1,2 @@
+//>>built
+(function(){define("App/Views/HelloDojoButton",["dojo/_base/declare","dojo/on","dijit/_WidgetBase"],function(_1,_2,_3){return _1("HelloDojoButton",[_3],{message:null,postCreate:function(){var _4=this;return _2(this.domNode,"click",function(){return $(_4.domNode).after($("<p />").text(_4.message));});}});});}).call(this);

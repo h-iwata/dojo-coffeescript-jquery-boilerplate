@@ -11,7 +11,8 @@ var dojoConfig = {
 		{ name: "lib", location: '../lib'},
 		{ name: 'dojo', location: 'dojo'},
 		{ name: 'dijit', location: 'dijit'},
-		{ name: 'dojox', location: 'dojox'}
+		{ name: 'dojox', location: 'dojox'},
+		{ name: "doh", location: 'util/doh'}
 	],
 	deps: [
 		'dojo/parser',

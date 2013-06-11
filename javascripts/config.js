@@ -9,7 +9,8 @@ var dojoConfig = {
 	baseUrl: '/javascripts/release',
 	packages: [
 		{ name: AppName, location: AppName },
-		{ name: "lib", location: '../lib'}
+		{ name: "lib", location: '../lib'},
+		
 	],
 	deps: [
 		'dojo/parser',
@@ -26,12 +27,13 @@ if (debug){
 		"dojo-debug-messages": true
 	}
 	dojoConfig.deps = [
-		AppName + '/lib/Debug',
 		AppName + '/app',
 		'dojo/parser'
 	]
+	dojoConfig.packages.push({ name: "doh", location: 'util/doh'})
+} else {
+	dojoConfig.packages.push({ name: "doh", location: 'doh'})
 }
-
 
 
 
