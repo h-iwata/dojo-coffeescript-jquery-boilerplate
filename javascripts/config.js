@@ -1,4 +1,4 @@
-var debug = true;
+var debug = false;
 var AppName = "App"
 var dojoConfig = {
 	usePlainJson 	: true,
@@ -9,7 +9,6 @@ var dojoConfig = {
 	baseUrl: '/javascripts/release',
 	packages: [
 		{ name: AppName, location: AppName },
-		{ name: "lib", location: '../lib'},
 		
 	],
 	deps: [

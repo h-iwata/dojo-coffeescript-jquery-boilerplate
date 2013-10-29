@@ -25,7 +25,7 @@ var profile = {
 			return false;
 		},
 		copyOnly: function (filename, mid) {
-			return (/^\/resources\/js\/lib\//.test(filename));
+			return (/^\/javascripts\/lib\//.test(filename));
 		},
 		amd: function(filename, mid){
 			return !this.copyOnly(filename, mid) && /\.js$/.test(filename);

@@ -8,7 +8,6 @@ var dojoConfig = {
 	locale: 'ja-jp',
 	packages: [
 		{ name: AppName, location:  AppName},
-		{ name: "lib", location: '../lib'},
 		{ name: 'dojo', location: 'dojo'},
 		{ name: 'dijit', location: 'dijit'},
 		{ name: 'dojox', location: 'dojox'},
