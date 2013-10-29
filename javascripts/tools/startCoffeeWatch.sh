@@ -3,7 +3,7 @@
 BASEDIR=$(cd $(dirname $0) && pwd)
 
 # Source directory for unbuilt code
-SRCDIR="$BASEDIR/../../src"
+SRCDIR="$BASEDIR/../src"
 
 echo 'set debug mode to config.js'
 perl -pwi -e "s/var debug = false;/var debug = true;/g" "$BASEDIR/../config.js"
