@@ -23,9 +23,24 @@ LOADERCONF="$BASEDIR/config.js"
 # Directory containing dojo build utilities
 TOOLSDIR="$SRCDIR/util/buildscripts"
 
-if [ ! -d "$TOOLSDIR" ]; then
-	echo "Can't find Dojo build tools -- did you initialise submodules? (git submodule update --init --recursive)"
-	exit 1
+if [ ! -d "$SRCDIR/dojo" ]; then
+    echo "Can not find dojo resources in 'src/dojo'..."
+    git clone https://github.com/dojo/dojo "$SRCDIR/dojo"
+fi
+
+if [ ! -d "$SRCDIR/dijit" ]; then
+    echo "Can not find dijit resources in 'src/dijit'..."
+    git clone https://github.com/dojo/dijit "$SRCDIR/dijit"
+fi
+
+if [ ! -d "$SRCDIR/dojox" ]; then
+    echo "Can not find dojox resources in 'src/dojox'..."
+    git clone https://github.com/dojo/dojox "$SRCDIR/dojox"
+fi
+
+if [ ! -d "$SRCDIR/util" ]; then
+    echo "Can not find util resources in 'src/util'..."
+    git clone https://github.com/dojo/util "$SRCDIR/util"
 fi
 
 if [ ! -d "$DISTDIR" ]; then
@@ -36,24 +51,46 @@ echo "compile coffee to javascript..."
 coffee -c --output $SRCDIR $COFFEEDIR
 echo "done!"
 
-
-echo "Building application with $PROFILE to $DISTDIR."
-
 if [ -d "$DISTDIR" ]; then
 	echo -n "old file detected.... Clean up old files..."
 	rm -r "$DISTDIR" 
-	echo " Done"
+	echo "done"
 fi
-cd "$TOOLSDIR"
 
-echo $SRCDIR
+cd "$TOOLSDIR"
+echo "Building application with $SRCDIR to $DISTDIR..."
+
 # use node.js
 if which node >/dev/null ; then
     node $SRCDIR/dojo/dojo.js load=build --dojoConfig "$LOADERCONF" --profile "$PROFILE" --releaseDir "$DISTDIR" $@
     echo "done!"
+    #if you got some error but need continue , comment out file util/build/main:line 186 as follows
+    # //bc.exitCode = 1;
+    
 else
 	echo "Need node.js "
 	exit 1
+fi
+
+echo "remove dojo local resources in the release folder"
+if [ -d "$DISTDIR/dojo" ]; then
+    rm -r "$DISTDIR/dojo"
+fi
+
+if [ -d "$DISTDIR/dijit" ]; then
+    rm -r "$DISTDIR/dijit"
+fi
+
+if [ -d "$DISTDIR/dojox" ]; then
+    rm -r "$DISTDIR/dojox"
+fi
+
+if [ -d "$DISTDIR/doh" ]; then
+    rm -r "$DISTDIR/doh"
+fi
+
+if [ -d "$DISTDIR/doh" ]; then
+	rm -r "$DISTDIR/doh"
 fi
 
 if [ -d "$DISTDIR" ] && [ -n "$(find $DISTDIR -type f -name '*.uncompressed.js')" ]; then
@@ -64,10 +101,16 @@ if [ -d "$DISTDIR" ] && [ -n "$(find $DISTDIR -type f -name '*.uncompressed.js')
 fi
 cd "$BASEDIR"
 
-echo "remove dojo local files in the release folder"
-if [ -d "$DISTDIR/dojo" ]; then
-	rm -r ../../release/dojo/
-	rm -r ../../release/dijit/
-	rm -r ../../release/dojox/
-fi
+echo 'set release mode to config.js'
+perl -pwi -e "s/var debug = true;/var debug = false;/g" "$BASEDIR/../../config.js"
+echo 'done!'
+
 echo "complete !!"
+
+
+
+
+
+
+
+
