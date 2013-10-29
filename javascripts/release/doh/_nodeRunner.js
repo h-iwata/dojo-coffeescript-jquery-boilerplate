@@ -1,2 +1,0 @@
-//>>built
-define("doh/_nodeRunner",["doh/runner","require","dojo/_base/config"],function(_1,_2,_3){_1.debug=console.log;_1.error=console.log;var _4=_1._report;_1._report=function(){_4.apply(_1,arguments);if(this._failureCount>0||this._errorCount>0){process.exit(1);}};for(var _5=[],_6=_3["commandLineArgs"],i=0,_7;i<_6.length;i++){_7=_6[i];if(_7.length==2&&_7[0]=="test"){var _8=_7[1];_5.push(_8);}}_2(_5,function(){_1.run();});});
