@@ -1,4 +1,4 @@
-var debug = false;
+var debug = true;
 var AppName = "App"
 var dojoConfig = {
 	usePlainJson 	: true,
