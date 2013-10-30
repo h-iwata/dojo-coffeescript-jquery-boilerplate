@@ -6,7 +6,7 @@ BASEDIR=$(cd $(dirname $0) && pwd)
 SRCDIR="$BASEDIR/../src"
 
 echo 'set debug mode to config.js'
-perl -pwi -e "s/var debug = false;/var debug = true;/g" "$BASEDIR/../config.js"
+perl -pwi'.bak' -e "s/var debug = false;/var debug = true;/g" "$BASEDIR/../config.js"
 echo 'done!'
 
 if [ ! -d "$SRCDIR/dojo" ]; then
