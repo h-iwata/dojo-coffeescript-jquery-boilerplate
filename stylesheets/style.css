@@ -1,0 +1,31 @@
+body {
+	background-color:#ebebeb;
+	color:#333333;
+}
+
+div#container {
+	width:900px;
+	margin:auto;
+}
+
+h1 {
+	margin-top:50px;
+}
+
+section {
+	margin-left:50px;
+}
+
+button {
+	margin-top:50px;
+}
+
+#value {
+	display:inline-blick;
+	width:20px;
+	text-align:center;
+	padding:5px 5px;
+	margin-top:20px;
+	margin-left:50px;
+	border:1px solid #333333;
+}
