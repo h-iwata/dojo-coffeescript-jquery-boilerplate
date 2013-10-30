@@ -34,5 +34,9 @@ layers: {
 After build, you will see all modules required in a controller is now complessed into a single controller file.
 but you don't have to change any codes.
 
+## Depandencies
+* node.js
+* perl
+
 ## Contributing
 Anyone is welcome.
