@@ -102,7 +102,7 @@ fi
 cd "$BASEDIR"
 
 echo 'set release mode to config.js'
-perl -pwi -e "s/var debug = true;/var debug = false;/g" "$BASEDIR/../../config.js"
+perl -pwi'.bak' -e "s/var debug = true;/var debug = false;/g" "$BASEDIR/../../config.js"
 echo 'done!'
 
 echo "complete !!"
