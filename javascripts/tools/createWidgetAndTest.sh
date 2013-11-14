@@ -25,12 +25,12 @@ PACKAGE_NAME="App"
 
 if [ $# -eq 0 ]; then
   echo "usage: createWidgetAndTest.sh [PathFromView/]WidgetName [PackageName]"
+  echo "example: createWidgetAndTest.sh Corporation/Index/MyButton MyApp"
   exit 1
 fi
 
 if [ $# -gt 2 ]; then
     echo "too many arguments"
-    echo "usage: createWidgetAndTest.sh [PathFromView/]WidgetName [PackageName]"
   exit 1
 fi
 
@@ -38,12 +38,18 @@ WIDGET_NAME=$1
 if [ $# -eq 2 ]; then
     PACKAGE_NAME=$2
 fi
+
 mkdir -p "${COFFEEDIR}/${PACKAGE_NAME}/Views"
 mkdir -p "${COFFEEDIR}/${PACKAGE_NAME}/tests/Views"
 
-cat $BASEDIR/templates/Widget.coffee | sed -e "s/#{PackageName}/$PACKAGE_NAME/g" | sed -e "s/#{WidgetName}/$WIDGET_NAME/g" > ${COFFEEDIR}/${PACKAGE_NAME}/Views/$WIDGET_NAME.coffee
-cat $BASEDIR/templates/Test.coffee | sed -e "s/#{PackageName}/$PACKAGE_NAME/g" | sed -e "s/#{WidgetName}/$WIDGET_NAME/g" > ${COFFEEDIR}/${PACKAGE_NAME}/tests/Views/$WIDGET_NAME.coffee
-cat $BASEDIR/templates/demo-page.html | sed -e "s/#{PackageName}/$PACKAGE_NAME/g" | sed -e "s/#{WidgetName}/$WIDGET_NAME/g" > ${COFFEEDIR}/${PACKAGE_NAME}/tests/Views/$WIDGET_NAME.html
+if echo $WIDGET_NAME | grep "/" > /dev/null; then
+    WIDGET_DIR=`echo $WIDGET_NAME | sed -e "s@\(^[a-zA-Z_0-9\/]\+\)/[a-zA-Z_0-9]\+@\1@g"`
+    mkdir -p "${COFFEEDIR}/${PACKAGE_NAME}/Views/${WIDGET_DIR}"
+    mkdir -p "${COFFEEDIR}/${PACKAGE_NAME}/tests/Views/${WIDGET_DIR}"
+fi
+cat $BASEDIR/templates/Widget.coffee | sed -e "s@#{PackageName}@$PACKAGE_NAME@g" | sed -e "s@#{WidgetName}@$WIDGET_NAME@g" > ${COFFEEDIR}/${PACKAGE_NAME}/Views/$WIDGET_NAME.coffee
+cat $BASEDIR/templates/Test.coffee | sed -e "s@#{PackageName}@$PACKAGE_NAME@g" | sed -e "s@#{WidgetName}@$WIDGET_NAME@g" > ${COFFEEDIR}/${PACKAGE_NAME}/tests/Views/$WIDGET_NAME.coffee
+cat $BASEDIR/templates/demo-page.html | sed -e "s@#{PackageName}@$PACKAGE_NAME@g" | sed -e "s@#{WidgetName}@$WIDGET_NAME@g" > ${COFFEEDIR}/${PACKAGE_NAME}/tests/Views/$WIDGET_NAME.html
 
 coffee -c --output $BASEDIR/../src $BASEDIR/../coffee
 
@@ -52,7 +58,7 @@ if [ -f ${COFFEEDIR}/${PACKAGE_NAME}/tests/module.coffee ]; then
         echo "  doh.register '$WIDGET_NAME', require.toUrl('/javascripts/coffee/$PACKAGE_NAME/tests/Views/$WIDGET_NAME.html'), 999999" >> ${COFFEEDIR}/${PACKAGE_NAME}/tests/module.coffee
     fi
 else
-    cat $BASEDIR/templates/module.coffee | sed -e "s/#{PackageName}/$PACKAGE_NAME/g" | sed -e "s/#{WidgetName}/$WIDGET_NAME/g" > ${COFFEEDIR}/${PACKAGE_NAME}/tests/module.coffee
+    cat $BASEDIR/templates/module.coffee | sed -e "s@#{PackageName}@$PACKAGE_NAME@g" | sed -e "s@#{WidgetName}@$WIDGET_NAME@g" > ${COFFEEDIR}/${PACKAGE_NAME}/tests/module.coffee
 fi
 
 if ! grep "{ name: '$PACKAGE_NAME', location: '$PACKAGE_NAME'}" BASEDIR/../config.js > /dev/null; then
