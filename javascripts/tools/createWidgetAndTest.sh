@@ -38,7 +38,6 @@ WIDGET_NAME=$1
 if [ $# -eq 2 ]; then
     PACKAGE_NAME=$2
 fi
-
 mkdir -p "${COFFEEDIR}/${PACKAGE_NAME}/Views"
 mkdir -p "${COFFEEDIR}/${PACKAGE_NAME}/tests/Views"
 
@@ -46,22 +45,24 @@ cat $BASEDIR/templates/Widget.coffee | sed -e "s/#{PackageName}/$PACKAGE_NAME/g"
 cat $BASEDIR/templates/Test.coffee | sed -e "s/#{PackageName}/$PACKAGE_NAME/g" | sed -e "s/#{WidgetName}/$WIDGET_NAME/g" > ${COFFEEDIR}/${PACKAGE_NAME}/tests/Views/$WIDGET_NAME.coffee
 cat $BASEDIR/templates/demo-page.html | sed -e "s/#{PackageName}/$PACKAGE_NAME/g" | sed -e "s/#{WidgetName}/$WIDGET_NAME/g" > ${COFFEEDIR}/${PACKAGE_NAME}/tests/Views/$WIDGET_NAME.html
 
+coffee -c --output $BASEDIR/../src $BASEDIR/../coffee
+
 if [ -f ${COFFEEDIR}/${PACKAGE_NAME}/tests/module.coffee ]; then
-    if grep "  doh.register '$WIDGET_NAME', require.toUrl('/javascripts/coffee/$PACKAGE_NAME/tests/Views/$WIDGET_NAME.html'), 999999" ${COFFEEDIR}/${PACKAGE_NAME}/tests/module.coffee  > /dev/null; then
-        exit 0
-    else
+    if ! grep "  doh.register '$WIDGET_NAME', require.toUrl('/javascripts/coffee/$PACKAGE_NAME/tests/Views/$WIDGET_NAME.html'), 999999" ${COFFEEDIR}/${PACKAGE_NAME}/tests/module.coffee  > /dev/null; then
         echo "  doh.register '$WIDGET_NAME', require.toUrl('/javascripts/coffee/$PACKAGE_NAME/tests/Views/$WIDGET_NAME.html'), 999999" >> ${COFFEEDIR}/${PACKAGE_NAME}/tests/module.coffee
     fi
 else
     cat $BASEDIR/templates/module.coffee | sed -e "s/#{PackageName}/$PACKAGE_NAME/g" | sed -e "s/#{WidgetName}/$WIDGET_NAME/g" > ${COFFEEDIR}/${PACKAGE_NAME}/tests/module.coffee
 fi
 
+if ! grep "{ name: '$PACKAGE_NAME', location: '$PACKAGE_NAME'}" BASEDIR/../config.js > /dev/null; then
+    perl -pwi'.bak' -e "s/packages: \[/packages: \[\n\t\t{ name: '$PACKAGE_NAME', location: '$PACKAGE_NAME'}\,/" $BASEDIR/../config.js
+fi
 
+echo "widget and test are created. start test server, then see "
+echo "http://localhost:3000/javascripts/coffee/$PACKAGE_NAME/tests/Views/$WIDGET_NAME.html"
 
-
-
-
-
+exit 0
 
 
 

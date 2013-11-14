@@ -8,8 +8,7 @@ var dojoConfig = {
 	locale: 'ja-jp',
 	baseUrl: '/javascripts/release',
 	packages: [
-		{ name: AppName, location: AppName },
-		
+		{ name: AppName, location: AppName }
 	],
 	deps: [
 		'dojo/parser',
@@ -33,27 +32,3 @@ if (debug){
 } else {
 	dojoConfig.packages.push({ name: "doh", location: 'doh'})
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
