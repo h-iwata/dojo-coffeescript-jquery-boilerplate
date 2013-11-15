@@ -61,7 +61,7 @@ else
     cat $BASEDIR/templates/module.coffee | sed -e "s@#{PackageName}@$PACKAGE_NAME@g" | sed -e "s@#{WidgetName}@$WIDGET_NAME@g" > ${COFFEEDIR}/${PACKAGE_NAME}/tests/module.coffee
 fi
 
-if ! grep "{ name: '$PACKAGE_NAME', location: '$PACKAGE_NAME'}" BASEDIR/../config.js > /dev/null; then
+if ! grep "{ name: '$PACKAGE_NAME', location: '$PACKAGE_NAME'}" $BASEDIR/../config.js > /dev/null; then
     perl -pwi'.bak' -e "s/packages: \[/packages: \[\n\t\t{ name: '$PACKAGE_NAME', location: '$PACKAGE_NAME'}\,/" $BASEDIR/../config.js
 fi
 
