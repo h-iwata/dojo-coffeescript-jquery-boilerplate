@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Style-Type" content="text/css" >
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<link href="/stylesheets/css/style.css" media="all" rel="stylesheet" />
+		<style type="text/css">
+			#container {
+				background-color:white;width:900px;height:2000px;margin:auto;
+			}
+			button {
+				margin:200px;font-size:20px;
+			}
+			a {
+				margin:200px;font-size:20px;
+			}
+			#bottom {
+				background-color:gray;width:900px;height:100px;margin:auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="container">
+			<button data-dojo-type="Sample/Views/SmoothScrollToTargetId" data-dojo-props="targetId:'bottom', duration:100">go to bottom</button><br />
+			<!--Test failed if this broken <p tag removed.-->
+			<p><a href="#bottom" data-dojo-type="Sample/Views/SmoothScrollToTargetId" data-dojo-props="duration:100">go to bottom</a></p>
+		</div>
+		<div id="bottom">
+			<button data-dojo-type="Sample/Views/SmoothScrollToTargetId" data-dojo-props="duration:100">go to top</button><br />
+			<p><a href="#" data-dojo-type="Sample/Views/SmoothScrollToTargetId" data-dojo-props="duration:100">go to top</a></p>
+		</div>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script src="/javascripts/config.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js"></script>
+		<script type="text/javascript">
+		//<!--
+			require(["Sample/Views/SmoothScrollToTargetId"]);
+			require(['Sample/tests/Views/SmoothScrollToTargetId']);
+		//-->
+		</script>
+	</body>
+</html>
