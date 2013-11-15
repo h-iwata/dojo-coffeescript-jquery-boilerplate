@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Language" content="ja" />
+		<meta http-equiv="Content-Script-Type" content="test/javascript" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+
+	</head>
+	<body>
+
+		<div class="contents corporation">
+			<div class="widget">
+				<h3>特許出願先 <small>（出展:Googleマップ）</small></h3>
+				<div id="empty-property-of-center" data-dojo-type="Google/Views/Map" data-dojo-props="" style="width:250px; height:180px;"></div>
+			</div>
+			<div class="widget">
+				<h3>特許出願先 <small>（出展:Googleマップ）</small></h3>
+				<div id="invalid-address" data-dojo-type="Google/Views/Map" data-dojo-props="center : 'non-exist-address'" style="width:250px; height:180px;"></div>
+			</div>
+			
+			<div class="widget">
+				<h3>特許出願先 <small>（出展:Googleマップ）</small></h3>
+				<div id="set-center-only" data-dojo-type="Google/Views/Map" data-dojo-props="center : '東京都千代田区霞が関３丁目４'" style="width:250px; height:180px;"></div>
+			</div>
+			<div class="widget">
+				<h3>特許出願先 <small>（出展:Googleマップ）</small></h3>
+				<div id="set-markers-auto-resize" data-dojo-type="Google/Views/Map" data-dojo-props="center : '東京都千代田区霞が関３丁目４', markers:['静岡県富士宮市富士山頂剣ヶ峯', '滋賀県長浜市早崎1666']" style="width:250px; height:180px;"></div>
+			</div>
+			<div class="widget">
+				<h3>特許出願先 <small>（出展:Googleマップ）</small></h3>
+				<div id="set-invalid-marker" data-dojo-type="Google/Views/Map" data-dojo-props="center : '東京都千代田区霞が関３丁目４', markers:['non-exist-address', '静岡県富士宮市富士山頂剣ヶ峯']" style="width:250px; height:180px;"></div>
+			</div>
+		</div>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="/javascripts/config.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js"></script>
+
+		<script type="text/javascript">
+		//<!--
+			require(["Google/Views/Map"]);
+			require(["Google/tests/Views/Map"]);
+		//-->
+		</script>
+
+	</body>
+</html>
