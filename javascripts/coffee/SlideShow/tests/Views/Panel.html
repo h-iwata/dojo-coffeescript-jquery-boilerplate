@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Language" content="en" />
+		<meta http-equiv="Content-Script-Type" content="test/javascript" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>Panel Demo</title>
+    <style type="text/css">
+      .mask {
+          width:180px;
+          background-color: #FFFFFF;
+          border: 1px solid #B3B3B3;
+          overflow: hidden;
+          padding: 9px;
+      }
+      ul {
+        width: 2000000px;
+        position:relative;
+        list-style-type: none;
+        margin:0;
+        padding:0;
+      }
+      li {
+        float:left;
+        text-align:center;
+        height: 180px;
+        width: 180px;
+        margin-right: 10px;
+      }
+      .clear-both {
+        display: table;
+        line-height:0;
+        clear:both;
+      }
+    </style>
+	</head>
+	<body>
+      <div class="mask" >
+        <ul id="Panel" data-dojo-type="SlideShow/Views/Panel">
+          <li>
+            <img src="http://dummyimage.com/180x180/d1b780/ffffff" />
+          </li>
+          <li>
+            <img src="http://dummyimage.com/180x180/cfa34b/fff" />
+          </li>
+          <li>
+            <img src="http://dummyimage.com/180x180/cc9425/fff" />
+          </li>
+          <li>
+            <img src="http://dummyimage.com/180x180/c78304/fff" />
+          </li>
+          <div class="clear-both"></div>
+        </ul>
+        <div class="clear-both"></div>
+      </div>
+      <button data-dojo-type="SlideShow/Views/Navigater" data-dojo-props="panelId:'Panel', target:'prev'" style="display:none">
+        <i class="icon">&lt;</i>
+      </button>
+
+      <button data-dojo-type="SlideShow/Views/Navigater" data-dojo-props="panelId:'Panel', target:'next'">
+        <i class="icon">&gt;</i>
+      </button>
+      <span data-dojo-type="SlideShow/Views/CurrentPageNumber" data-dojo-props="panelId:'Panel'">1</span>/4</div>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="/javascripts/config.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js"></script>
+		<script type="text/javascript">
+			require(["SlideShow/Views/Panel"]);
+			require(["SlideShow/Views/Navigater"])
+			require(["SlideShow/Views/CurrentPageNumber"]);
+			require(["SlideShow/tests/Views/Panel"]);
+		</script>
+	</body>
+</html>

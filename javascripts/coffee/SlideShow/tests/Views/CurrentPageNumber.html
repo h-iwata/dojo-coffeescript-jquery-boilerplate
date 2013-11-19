@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Language" content="en" />
+		<meta http-equiv="Content-Script-Type" content="test/javascript" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<title>CurrentPageNumber Demo</title>
+	</head>
+	<body>
+		<div data-dojo-type="SlideShow/Views/CurrentPageNumber">
+			CurrentPageNumber is created here
+		</div>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="/resources/javascripts/config.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js"></script>
+		<script type="text/javascript">
+			require(["SlideShow/Views/CurrentPageNumber"]);
+			require(["SlideShow/tests/Views/CurrentPageNumber"])
+		</script>
+	</body>
+</html>

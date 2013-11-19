@@ -8,6 +8,7 @@ var dojoConfig = {
 	locale: 'ja-jp',
 	baseUrl: '/javascripts/release',
 	packages: [
+    { name: 'SlideShow', location: 'SlideShow'},
 		{ name: 'Sample', location: 'Sample'},
 		{ name: 'Google', location: 'Google'},
 		{ name: AppName, location: AppName }
