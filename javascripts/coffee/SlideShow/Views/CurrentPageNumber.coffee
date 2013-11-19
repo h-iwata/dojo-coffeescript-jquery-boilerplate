@@ -2,15 +2,17 @@ define [
   "dojo/_base/declare"
   "dijit/_WidgetBase"
   "dijit/registry"
-], (declare, _WidgetBase, registry) ->
+  "dojo/aspect"
+], (declare, _WidgetBase, registry, aspect) ->
   declare "CurrentPageNumber", [_WidgetBase],
     
     panelId:''
-    
+    Panel: null
+
     postCreate: ->
-      registry.byId(@panelId).setSubscriber(@)
-      
-    beforeSlide: (current)->
+      @Panel = registry.byId(@panelId)
+      aspect.after @Panel, "slideTo", =>
+        @afterSlide @Panel.current
     
     afterSlide: (current)->
       $(@domNode).html(current + 1)

@@ -15,7 +15,6 @@ define [
     max: 0
     animating: false
     duration: 300
-    Subscribers: []
     
     postCreate: ->
       @listWidth = $($(@domNode).find('li')[0]).width() if @listWidth is null
@@ -26,14 +25,10 @@ define [
           event.preventDefault()
           event.stopPropagation()
           if event.wheelDelta < 0 then @slideTo 'next' else @slideTo 'prev'
-      
-    setSubscriber: (Subscriber) ->
-      @Subscribers.push Subscriber
-    
+     
     slideTo: (target) ->
       return false if @animating is true
       @animating = true
-      Subscriber.beforeSlide(@current) for Subscriber in @Subscribers
       switch target
         when 'next'
           @current += 1 if @current < @max
@@ -46,7 +41,7 @@ define [
         left: @listWidth * - @current
       , @duration, =>
         @animating = false
-        Subscriber.afterSlide(@current) for Subscriber in @Subscribers
+        return @current
         
         
 

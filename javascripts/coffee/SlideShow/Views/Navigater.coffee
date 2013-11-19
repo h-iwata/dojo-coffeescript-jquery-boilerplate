@@ -3,8 +3,9 @@ define [
   "dijit/_WidgetBase"
   "dijit/registry"
   "dojo/on"
+  "dojo/aspect"
   "dojo/ready"
-], (declare, _WidgetBase, registry, on_, ready) ->
+], (declare, _WidgetBase, registry, on_, aspect, ready) ->
   declare "Navigater", [_WidgetBase],
     
     panelId:''
@@ -15,14 +16,13 @@ define [
     postCreate: ->
       ready =>
         @Panel = registry.byId(@panelId)
-        @Panel.setSubscriber(@)
         on_ @domNode, 'click', =>
           @onClick()
-      
+        aspect.after @Panel, 'slideTo', =>
+          @afterSlide @Panel.current
+
     onClick: ->
       @Panel.slideTo(@target)
-    
-    beforeSlide: (current)->
     
     afterSlide: (current) ->
       if (@target is 'prev' and current is 0) or (@target is 'next' and current is @Panel.max)
