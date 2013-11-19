@@ -7,7 +7,7 @@ define [
   declare "CurrentPageNumber", [_WidgetBase],
     
     panelId:''
-    Panel: null
+    Panel: ''
 
     postCreate: ->
       @Panel = registry.byId(@panelId)

@@ -1,4 +1,3 @@
-
 define [
   "dojo/_base/declare"
   "dijit/_WidgetBase"
@@ -36,13 +35,11 @@ define [
           @current -= 1 if @current > 0
         else
           @current = target if $.isNumeric(target) is true
-
       $(@domNode).animate
         left: @listWidth * - @current
       , @duration, =>
         @animating = false
-        return @current
-        
+        return true
         
 
 

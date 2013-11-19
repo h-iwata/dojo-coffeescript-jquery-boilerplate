@@ -14,15 +14,15 @@ define [
     Panel:''
     
     postCreate: ->
-      ready =>
-        @Panel = registry.byId(@panelId)
-        on_ @domNode, 'click', =>
-          @onClick()
-        aspect.after @Panel, 'slideTo', =>
-          @afterSlide @Panel.current
+      @Panel = registry.byId(@panelId)
+      on_ @domNode, 'click', =>
+        @onClick()
+
+      aspect.after @Panel, 'slideTo', =>
+        @afterSlide @Panel.current
 
     onClick: ->
-      @Panel.slideTo(@target)
+      @Panel.slideTo @target
     
     afterSlide: (current) ->
       if (@target is 'prev' and current is 0) or (@target is 'next' and current is @Panel.max)
@@ -31,4 +31,4 @@ define [
       else
         $(@domNode).css
           display: 'block'
-        
+
