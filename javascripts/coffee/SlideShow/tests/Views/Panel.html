@@ -35,9 +35,9 @@
       }
     </style>
 	</head>
-	<body>
-      <div class="mask" >
-        <ul id="Panel" data-dojo-type="SlideShow/Views/Panel">
+  <body>
+    <div class="mask" >
+        <ul id="Panel" data-dojo-type="SlideShow/Views/Panel" data-dojo-props="listWidth:190">
           <li>
             <img src="http://dummyimage.com/180x180/d1b780/ffffff" />
           </li>
@@ -57,11 +57,11 @@
       <button data-dojo-type="SlideShow/Views/Navigater" data-dojo-props="panelId:'Panel', target:'prev'" style="display:none">
         <i class="icon">&lt;</i>
       </button>
-
       <button data-dojo-type="SlideShow/Views/Navigater" data-dojo-props="panelId:'Panel', target:'next'">
         <i class="icon">&gt;</i>
       </button>
-      <span data-dojo-type="SlideShow/Views/CurrentPageNumber" data-dojo-props="panelId:'Panel'">1</span>/4</div>
+      <span data-dojo-type="SlideShow/Views/CurrentPageNumber" data-dojo-props="panelId:'Panel'">1</span>/4
+    </div>
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type="text/javascript" src="/javascripts/config.js"></script>
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js"></script>

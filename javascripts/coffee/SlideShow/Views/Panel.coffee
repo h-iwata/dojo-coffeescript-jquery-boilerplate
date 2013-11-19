@@ -8,7 +8,7 @@ define [
 ], (declare, _WidgetBase, on_, mouse, has) ->
   declare "Panel", [_WidgetBase],
       
-    listWidth: 190
+    listWidth: null
     mouseWheel: true
     
     current: 0
@@ -34,13 +34,14 @@ define [
       return false if @animating is true
       @animating = true
       Subscriber.beforeSlide(@current) for Subscriber in @Subscribers
-      
       switch target
-        when'next' 
-          @current += 1 if @current < @max 
-        when'prev' 
+        when 'next'
+          @current += 1 if @current < @max
+        when 'prev'
           @current -= 1 if @current > 0
-      
+        else
+          @current = target if $.isNumeric(target) is true
+
       $(@domNode).animate
         left: @listWidth * - @current
       , @duration, =>
