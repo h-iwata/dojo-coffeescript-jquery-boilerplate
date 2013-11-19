@@ -9,7 +9,7 @@ define [
   declare "Navigater", [_WidgetBase],
     
     panelId:''
-    target:''  
+    target:''
     
     Panel:''
     

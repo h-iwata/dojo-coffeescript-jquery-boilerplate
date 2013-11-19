@@ -8,13 +8,27 @@
 		<title>CurrentPageNumber Demo</title>
 	</head>
 	<body>
-		<div data-dojo-type="SlideShow/Views/CurrentPageNumber">
-			CurrentPageNumber is created here
-		</div>
+		<div class="mask" >
+        <ul id="Panel" data-dojo-type="SlideShow/Views/Panel" data-dojo-props="listWidth:190">
+          <li>
+          </li>
+          <li>
+          </li>
+          <li>
+          </li>
+          <li>
+          </li>
+          <div class="clear-both"></div>
+        </ul>
+        <div class="clear-both"></div>
+      </div>
+      <span id="CurrentPageNumber" data-dojo-type="SlideShow/Views/CurrentPageNumber" data-dojo-props="panelId:'Panel'">1</span>/4
+    </div>
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script type="text/javascript" src="/resources/javascripts/config.js"></script>
+		<script type="text/javascript" src="/javascripts/config.js"></script>
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js"></script>
-		<script type="text/javascript">
+    <script type="text/javascript">
+      require(["SlideShow/Views/Panel"]);
 			require(["SlideShow/Views/CurrentPageNumber"]);
 			require(["SlideShow/tests/Views/CurrentPageNumber"])
 		</script>
