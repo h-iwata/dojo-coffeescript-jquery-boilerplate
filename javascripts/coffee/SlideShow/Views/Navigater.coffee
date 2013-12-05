@@ -15,11 +15,14 @@ define [
     
     postCreate: ->
       @Panel = registry.byId(@panelId)
-      on_ @domNode, 'click', =>
-        @onClick()
-
-      aspect.after @Panel, 'slideTo', =>
-        @afterSlide @Panel.current
+      if $(@Panel.domNode).find('li').length <= 1
+        $(@domNode).css
+          display: 'none'
+      else 
+        on_ @domNode, 'click', =>
+          @onClick()
+        aspect.after @Panel, 'slideTo', =>
+          @afterSlide @Panel.current
 
     onClick: ->
       @Panel.slideTo @target
@@ -31,4 +34,11 @@ define [
       else
         $(@domNode).css
           display: 'block'
+
+
+
+
+
+
+
 

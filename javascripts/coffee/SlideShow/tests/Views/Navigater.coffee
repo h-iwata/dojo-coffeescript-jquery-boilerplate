@@ -38,4 +38,22 @@ require [
           deferred
         timeout: 400
     ]
+    
+    doh.register "navigater only shows when the Panel has at least one list", [
+        name: 'navigater is hidden when panel has only one list'
+        runTest: ->
+          doh.assertEqual 'none', $(registry.byId('NavigaterPrev_Only_One_list').domNode).css('display')
+          doh.assertEqual 'none', $(registry.byId('NavigaterNext_Only_One_list').domNode).css('display')
+    ]
+    
     doh.run()
+
+
+
+
+
+
+
+
+
+

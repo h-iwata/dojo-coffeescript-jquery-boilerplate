@@ -9,29 +9,36 @@
 	</head>
 	<body>
 		<div class="mask" >
-        <ul id="Panel" data-dojo-type="SlideShow/Views/Panel" data-dojo-props="listWidth:190">
-          <li>
-          </li>
-          <li>
-          </li>
-          <li>
-          </li>
-          <li>
-          </li>
-        </ul>
-      </div>
-      <button id="NavigaterPrev" data-dojo-type="SlideShow/Views/Navigater" data-dojo-props="panelId:'Panel', target:'prev'" style="display:none">
-        <i class="icon">&lt;</i>
-      </button>
-      <button id="NavigaterNext" data-dojo-type="SlideShow/Views/Navigater" data-dojo-props="panelId:'Panel', target:'next'">
-        <i class="icon">&gt;</i>
-      </button>
-    </div>
+			<ul id="Panel" data-dojo-type="SlideShow/Views/Panel" data-dojo-props="listWidth:190">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<button id="NavigaterPrev" data-dojo-type="SlideShow/Views/Navigater" data-dojo-props="panelId:'Panel', target:'prev'" style="display:none">
+			<i class="icon">&lt;</i>
+		</button>
+		<button id="NavigaterNext" data-dojo-type="SlideShow/Views/Navigater" data-dojo-props="panelId:'Panel', target:'next'">
+			<i class="icon">&gt;</i>
+		</button>
+		<div class="mask" >
+			<ul id="Panel_Only_One_list" data-dojo-type="SlideShow/Views/Panel" data-dojo-props="listWidth:190">
+				<li></li>
+			</ul>
+		</div>
+		<button id="NavigaterPrev_Only_One_list" data-dojo-type="SlideShow/Views/Navigater" data-dojo-props="panelId:'Panel_Only_One_list', target:'prev'" style="display:none">
+			<i class="icon">&lt;</i>
+		</button>
+		<button id="NavigaterNext_Only_One_list" data-dojo-type="SlideShow/Views/Navigater" data-dojo-props="panelId:'Panel_Only_One_list', target:'next'">
+			<i class="icon">&gt;</i>
+		</button>
+		
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type="text/javascript" src="/javascripts/config.js"></script>
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js"></script>
 		<script type="text/javascript">
-      require(["SlideShow/Views/Panel"]);
+			require(["SlideShow/Views/Panel"]);
 			require(["SlideShow/Views/Navigater"]);
 			require(["SlideShow/tests/Views/Navigater"])
 		</script>
