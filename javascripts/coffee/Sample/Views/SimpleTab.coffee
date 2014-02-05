@@ -12,9 +12,9 @@ define [
       on_ @domNode, 'click', => @toggleHideClass()
 
     toggleHideClass: ->
-      for simpleTabs in $(@domNode).closest('ul').find('li[id^=SimpleTab]')
-        $(registry.byNode(simpleTabs).domNode).removeClass 'active'
-        $(registry.byNode(simpleTabs).target).addClass 'hide'
+      for simpleTab in $(@domNode).closest('ul').find('[id^=SimpleTab]')
+        $(registry.byNode(simpleTab).domNode).removeClass 'active'
+        $(registry.byNode(simpleTab).target).addClass 'hide'
 
       $(@domNode).toggleClass 'active'
       $(@target).toggleClass 'hide'
