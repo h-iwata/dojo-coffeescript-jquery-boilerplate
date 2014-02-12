@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Language" content="en" />
+		<meta http-equiv="Content-Script-Type" content="test/javascript" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<title>OpenSNSWindow Demo</title>
+	</head>
+	<body>
+	 <ul>
+	   <li>
+	     <a data-dojo-type="Sample/Views/OpenSNSWindow" data-dojo-props="type:'facebook'" rel="nofollow">
+	       facebook test
+	     </a>
+	   </li>
+	   <li>
+       <a data-dojo-type="Sample/Views/OpenSNSWindow" data-dojo-props="type:'twitter'" rel="nofollow">
+         twitter test
+       </a>
+     </li>
+     <li>
+       <a data-dojo-type="Sample/Views/OpenSNSWindow" data-dojo-props="type:'google+'" rel="nofollow">
+         google+ test
+       </a>
+     </li>
+    </ul>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="/javascripts/config.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js"></script>
+		<script type="text/javascript">
+			require(["Sample/Views/OpenSNSWindow"]);
+			require(["Sample/tests/Views/OpenSNSWindow"])
+		</script>
+	</body>
+</html>
