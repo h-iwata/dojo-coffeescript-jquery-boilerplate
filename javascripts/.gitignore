@@ -1,4 +1,5 @@
 node_modules/
 src/
 release/
+release/build-report.txt
 config.js.bak
