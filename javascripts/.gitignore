@@ -3,3 +3,4 @@ src/
 release/
 release/build-report.txt
 config.js.bak
+*.swp
