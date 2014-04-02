@@ -48,7 +48,7 @@ if [ ! -d "$DISTDIR" ]; then
 fi
 
 echo "compile coffee to javascript..."
-coffee -c --output $SRCDIR $COFFEEDIR
+#coffee -c --output $SRCDIR $COFFEEDIR
 echo "done!"
 
 if [ -d "$DISTDIR" ]; then
@@ -94,8 +94,8 @@ if [ -d "$DISTDIR/doh" ]; then
 fi
 
 if [ -d "$DISTDIR" ] && [ -n "$(find $DISTDIR -type f -name '*.uncompressed.js')" ]; then
-    echo "delete .uncompressed files in the release folder..."
-        cd $DISTDIR
+    echo "remove .uncompressed files from the release folder..."
+    cd "$DISTDIR"
     find . -type f -name '*.uncompressed.js' -print0 | xargs -0 rm -r
     echo "done!"
 fi
