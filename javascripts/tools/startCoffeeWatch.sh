@@ -9,10 +9,13 @@ echo 'set debug mode to config.js'
 perl -pwi'.bak' -e "s/var debug = false;/var debug = true;/g" "$BASEDIR/../config.js"
 echo 'done!'
 
-if [ -f "$BASEDIR/../coffee/App/package.json" ]; then
-  echo "Copy package.json to src folder"
-  cp $BASEDIR/../coffee/App/package.json $SRCDIR/App/package.json
-fi
+for dirlist in `ls -l $BASEDIR/../coffee | awk '$1 ~ /d/ {print $9 }'` 
+do
+  if [ -f "$BASEDIR/../coffee/$dirlist/package.json" ]; then
+    echo "Copy $dirlist/package.json to src folder"
+    cp $BASEDIR/../coffee/$dirlist/package.json $SRCDIR/$dirlist/package.json
+  fi
+done
 
 if [ ! -d "$SRCDIR/dojo" ]; then
     echo "Can not find dojo resources in 'src/dojo'..."
