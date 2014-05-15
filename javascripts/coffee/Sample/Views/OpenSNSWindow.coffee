@@ -21,7 +21,7 @@ define [
       'google+': =>
         "https://plus.google.com/share?#{ioQuery.objectToQuery {url: location.href}}"
       'linkedin':->
-        "http://www.linkedin.com/shareArticle?{ioQuery.objectToQuery {url:location.href, title:document.title, mini:true}}"
+        "http://www.linkedin.com/shareArticle?#{ioQuery.objectToQuery {url:location.href, title:document.title, mini:true}}"
     postCreate: ->
       if not (@type in @types)
         console.log "#{@type} is not supported. Syntax\n-> data-dojo-props=\"type: {'facebook'|'twitter'|'google+'|'linkedin'}\""
