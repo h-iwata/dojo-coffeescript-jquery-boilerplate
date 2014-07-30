@@ -8,8 +8,8 @@ define [
   window[apiCallbackName] = ->
     deferred.resolve()
   {
-    load: (api)->
-      google.load api, "1",
+    load: (api, version = 1)->
+      google.load api, version,
         #空の関数をグローバルに指定することでAMDモードになる
         "callback" : apiCallbackName
       return deferred.promise;
