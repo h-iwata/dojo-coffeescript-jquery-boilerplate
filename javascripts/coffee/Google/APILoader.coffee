@@ -3,17 +3,12 @@ define [
   "dojo/Deferred"
   "//www.google.com/jsapi"
 ], (declarem, Deferred) ->
-  deferred = new Deferred()
-  apiCallbackName = "apiCallback#{(new Date()).getTime()}"
-  window[apiCallbackName] = ->
-    deferred.resolve()
   {
     load: (api, version = 1)->
+      deferred = new Deferred()
       google.load api, version,
-        #空の関数をグローバルに指定することでAMDモードになる
-        "callback" : apiCallbackName
+        "callback" : ->
+          deferred.resolve()
       return deferred.promise;
   }
-  
 
-  
