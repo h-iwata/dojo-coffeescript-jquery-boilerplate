@@ -11,7 +11,8 @@ var dojoConfig = {
 		{ name: 'dojo', location: 'dojo'},
 		{ name: 'dijit', location: 'dijit'},
 		{ name: 'dojox', location: 'dojox'},
-		{ name: "doh", location: 'util/doh'}
+		{ name: "doh", location: 'util/doh'},
+		{ name: 'Google', location: 'Google'}
 	],
 	deps: [
 		'dojo/parser',
