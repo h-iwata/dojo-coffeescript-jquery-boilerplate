@@ -8,8 +8,10 @@
 		<title>News Demo</title>
 	</head>
 	<body>
-		<div id="news" data-dojo-type="Google/Views/News"></div>
-		<div id="length-is-2" data-dojo-type="Google/Views/News" data-dojo-props="length: 2"></div>
+		<div id="news" data-dojo-type="Google/Views/News" data-dojo-props="query:'google'"></div>
+		<div id="length-is-2" data-dojo-type="Google/Views/News" data-dojo-props="length: 2, query:'obama'"></div>
+		<div id="no-style" data-dojo-type="Google/Views/News" data-dojo-props="length: 2, noStyle:true, query:'toyota'"></div>
+		
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type="text/javascript" src="/javascripts/config.js"></script>
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js"></script>

@@ -4,6 +4,10 @@ define [
   "dojo/io-query"
   "../Feed"
 ], (declare, _WidgetBase, ioQuery, GoogleFeed) ->
+  jQuery.fn.removeAllAttributes = ->
+    @.each ->
+      attributes = (attribute.name for attribute in @attributes) 
+      $(@).removeAttr(attribute) for attribute in attributes
       
   declare "News", [_WidgetBase],
     url : "https://news.google.com/news/feeds"
@@ -21,6 +25,7 @@ define [
     }
     
     length: 4
+    noStyle: false
     
     postCreate: ->
       @options['q'] = @query if @options['q'] is null and @query isnt null
@@ -33,23 +38,5 @@ define [
     setEntries: (entries) ->
       for entry in entries
         $(@domNode).append entry.content
-        #$(tag).removeAllAttributes() for tag in $(entry.content).find('*') 
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
+        $(tag).removeAllAttributes() for tag in $(@domNode).find('*:not(img)') when @noStyle
 
-###
-jQuery.fn.removeAllAttributes = ->
-  @.each ->
-    attributes = (attribute.name for attribute in @attributes) 
-    $(@).removeAttr(attribute) for attribute in attributes
-###

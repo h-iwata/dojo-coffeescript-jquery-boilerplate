@@ -11,4 +11,3 @@ define [
           deferred.resolve()
       return deferred.promise;
   }
-

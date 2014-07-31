@@ -12,7 +12,7 @@ require [
           aspect.after registry.byId('news'), 'setEntries', deferred.getTestCallback ->
             doh.assertEqual 4, $("#news").children().length
           deferred
-        timeout: 400
+        timeout: 10000
       ,
         name: 'you can set the size',
         runTest: ->
@@ -21,6 +21,6 @@ require [
             console.log $("#length-is-2").children().length
             doh.assertEqual 2, $("#length-is-2").children().length
           deferred
-        timeout: 8000
+        timeout: 10000
     ]
     doh.run()
