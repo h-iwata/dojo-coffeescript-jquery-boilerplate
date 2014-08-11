@@ -3,6 +3,9 @@
 The dojo-coffeescript-jquery-boilerplate is aimed at the best practice for the develop enviroment 
 with dojo for baseframework, jquery for dom operation, and coffeescript as languages.
 
+## Demo
+[dojo-coffeescript-jquery-boilerplate demo](http://dojo-demo.web-programmers-blog.com/)
+
 ##Quick Start
 
 1. Clone the repository using `git clone https://github.com/h-iwata/dojo-coffeescript-jquery-boilerplate.git`.
@@ -33,6 +36,10 @@ layers: {
 ```
 After build, you will see all modules required in a controller is now complessed into a single controller file.
 but you don't have to change any codes.
+
+## Learn more
+Here is my website(日本語):
+[webプログラマーのブログ](http://dojo-demo.web-programmers-blog.com/)
 
 ## Depandencies
 * node.js
