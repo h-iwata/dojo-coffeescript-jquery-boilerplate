@@ -7,3 +7,4 @@ define [
   doh.register 'CopyInnerDomToTargetId', require.toUrl('/javascripts/coffee/Sample/tests/Views/CopyInnerDomToTargetId.html'), 999999
   doh.register 'LazyLoad', require.toUrl('/javascripts/coffee/Sample/tests/Views/LazyLoad.html'), 999999
   doh.register 'OpenSNSWindow', require.toUrl('/javascripts/coffee/Sample/tests/Views/OpenSNSWindow.html'), 999999
+  doh.register 'Tree', require.toUrl('/javascripts/coffee/Sample/tests/Views/Tree.html'), 999999
