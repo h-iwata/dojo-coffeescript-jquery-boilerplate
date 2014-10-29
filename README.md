@@ -39,7 +39,9 @@ but you don't have to change any codes.
 
 ## Learn more
 Here is my website(日本語):
-[webプログラマーのブログ](http://dojo-demo.web-programmers-blog.com/)
+[webプログラマーのブログ](http://web-programmers-blog.com/)
+[javascript最強のフレームワーク、dojo入門＆簡易チュートリアル](http://web-programmers-blog.com/frontend/dojo/dojo-is-the-best/)
+[クライアントサイドjavascriptのテストをしたい！そんな時はD.O.H.: Dojo Objective Harness](http://web-programmers-blog.com/frontend/dojo/doh-dojo-objective-harness-javascript-test-framework/)
 
 ## Depandencies
 * node.js
